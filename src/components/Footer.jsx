@@ -27,15 +27,15 @@ const Footer = () => {
             <VStack w={'full'}>
                 <Heading size={"md"} textTransform={"uppercase"} pb={"5px"}>Social Media</Heading>
                 <HStack>
-                <Button color='white'  >
+                <Button color='red'  >
                     <AiFillYoutube size={'30px'}/>
                     
                 </Button>
-                <Button color='white'  >
-                    <AiFillInstagram size={'30px'}/>
-                </Button>
-                <Button color='white'  >
+                <Button color='#0F9AFB'  >
                     <AiFillTwitterSquare size={'30px'}/>
+                </Button>
+                <Button color='#F04C5C'  >
+                    <AiFillInstagram size={'30px'}/>
                 </Button>
                 </HStack>
                 
