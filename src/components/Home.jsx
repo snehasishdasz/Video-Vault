@@ -1,6 +1,9 @@
 import { Box, Container, Heading, Image, Stack, Text } from '@chakra-ui/react'
 import React from 'react'
+import userImage from "../user-image.jpg"
+import { NavLink } from 'react-router-dom';
 import { Carousel } from "react-responsive-carousel";
+import "../App.css"
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import img1 from "../assests/N2.jpg"
 import img2 from "../assests/A4.jpg"
@@ -99,6 +102,13 @@ const Home = () => {
                     </Text>
                 </Stack>
             </Container>
+
+            <NavLink to="/aboutme">
+
+      <div className="floating-icon" >
+        <img src={userImage} alt="User" className="user-image" />
+      </div>
+      </NavLink>
 
         </Box>
     )

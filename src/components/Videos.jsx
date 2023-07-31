@@ -1,5 +1,8 @@
 import { Button, Heading, Stack, Text, VStack } from '@chakra-ui/react'
 import React, { useState } from 'react'
+import { NavLink } from 'react-router-dom';
+  import "../App.css"
+  import userImage from "../user-image.jpg"
 
 const videosArr = [
   
@@ -38,6 +41,12 @@ const Videos = () => {
         ))
       }
       </VStack>
+      <NavLink to="/aboutme">
+
+      <div className="floating-icon" >
+        <img src={userImage} alt="User" className="user-image" />
+      </div>
+      </NavLink>
     </Stack>
   )
 }
