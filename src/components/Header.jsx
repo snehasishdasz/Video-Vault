@@ -1,5 +1,5 @@
 import React from 'react'
-import {Drawer,DrawerBody,DrawerHeader,DrawerOverlay,DrawerContent,DrawerCloseButton, Button, useDisclosure, color, VStack, HStack} from "@chakra-ui/react"
+import {Drawer,DrawerBody,DrawerHeader,DrawerOverlay,DrawerContent,DrawerCloseButton, Button, useDisclosure, color, VStack, HStack,Text} from "@chakra-ui/react"
 import { Link } from 'react-router-dom'
 import {HiMenuAlt2} from "react-icons/hi";
 
@@ -41,32 +41,33 @@ const Header = () => {
                 <DrawerHeader textAlign={"center"}><span style={{color:"#FF2E63",fontSize:"30px"}}>V</span>ideo<span style={{color:"#FF2E63",fontSize:"30px"}}>V</span>ault</DrawerHeader>
                 <DrawerBody>
                     <VStack>
-                        <Button onClick={onClose} w={"full"} color='#3F72AF'>
-                            <Link to={"/"}>Home</Link>
+                    <Link to={"/"}>
+                        <Button onClick={onClose}  color='#3F72AF' size='lg' height='48px' width='250px'>
+                            Home
                         </Button>
-
-                        <Button onClick={onClose} w={"full"} color='#3F72AF'>
+                    </Link>
+                        <Button onClick={onClose} w={"full"} color='#3F72AF' size='lg' height='48px' width='250px'>
                             <Link to={"/videos"}>Videos</Link>
                         </Button>
 
-                        <Button onClick={onClose} w={"full"} color='#3F72AF'>
+                        <Button onClick={onClose} w={"full"} color='#3F72AF' size='lg' height='48px' width='250px'>
                             <Link to={"/videos?category=free"}>Free Videos</Link>
                         </Button>
 
-                        <Button onClick={onClose} w={"full"} color='#3F72AF'>
+                        <Button onClick={onClose} w={"full"} color='#3F72AF' size='lg' height='48px' width='250px'>
                             <Link to={"/upload"}>Upload Video</Link>
                         </Button>
                     </VStack>
                     <HStack pos={"absolute"} bottom={"10"} left={"0"} w={"full"} justifyContent={"space-evenly"}>
                         <div className="bottom-part">
                         <div className="username">
-                            <h2> Hello👋 {currentUser?.displayName} </h2>
+                            <Text> Hello👋<span style={{fontWeight:"bold",color:"#0B2D51",fontSize:"18px"}}>   {currentUser?.displayName}</span></Text>
                         </div>
                         {
                             currentUser?.displayName ? 
                             <div className='signout'> 
-                            <Button colorScheme='red' onClick={logOut}>
-                                <Link to={"/login"}> Sigout </Link>
+                            <Button colorScheme='red'  onClick={logOut}>
+                                <Link to={"/login"} > Signout </Link>
                             </Button>
                             </div> 
                             : 
