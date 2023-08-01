@@ -9,8 +9,11 @@ import SignUp from "./components/SignUp";
 import Upload from "./components/Upload";
 import Profile from "./Profile/Profile"
 
+import UserProvider from "./context/userContext";
+
 function App() {
   return (
+  <UserProvider>
     <Router>
     <Header/>
       <Routes>
@@ -23,7 +26,7 @@ function App() {
       </Routes>
       <Footer/>
     </Router>
-    
+  </UserProvider>
   );
 }
 

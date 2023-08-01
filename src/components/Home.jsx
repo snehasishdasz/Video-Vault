@@ -13,27 +13,6 @@ import img5 from "../assests/S4.jpg"
 import img6 from "../assests/G3.jpg"
 import img7 from "../assests/V5.gif"
 
-
-// const MyCarousel = () =>{
-//     <Carousel 
-//     autoPlay 
-//     infiniteLoop 
-//     interval={1000} 
-//     showStatus={false} 
-//     showThumbs={false} 
-//     showArrows={false}>
-
-//         <Box w={'full'} h={"100vh"}>
-//             <Image src={img1}/>
-//             <Heading bgColor={"white"} color={"black"}>Nature</Heading>
-//         </Box>
-//         <Box w={'full'} h={"100vh"}>
-//             <Image src={img2}/>
-//             <Heading bgColor={"white"} color={"black"}>Nature</Heading>
-//         </Box>
-//     </Carousel>
-// };
-
 const headingOptions = {
     pos: "absolute",
     left: "50%",

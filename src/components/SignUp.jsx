@@ -1,24 +1,41 @@
-import {
-    Image,
-    // Avatar,
-    Button,
-    Container,
-    Heading,
-    Input,
-    Text,
-    VStack,
-  } from '@chakra-ui/react';
-  import React from 'react';
-  import avatar from "../assests/man.svg"
-  import { Link } from 'react-router-dom';
-  import { NavLink } from 'react-router-dom';
-  import "../App.css"
-  import man from "../assests/man.svg"
-  
+import { Image,Button,Container,Heading,Input,Text,VStack } from '@chakra-ui/react';
+import React from 'react';
+import avatar from "../assests/man.svg"
+import { Link, useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import "../App.css"
+import man from "../assests/man.svg"
+import { auth, db } from '../firebase/firebase';
+import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
+import { doc, setDoc } from 'firebase/firestore';
+
   const Signup = () => {
+
+    const navigate = useNavigate();
+    const handleSigup = async (e) => {
+      e.preventDefault();
+      const name = e.target[0].value;
+      const email = e.target[1].value;
+      const password = e.target[2].value;
+
+      try 
+      {
+        const {user} = await createUserWithEmailAndPassword(auth, email, password);
+        await updateProfile(user, {displayName:name});
+        await setDoc(doc(db, 'users', user.uid),{ uid: user.uid, name, email, videourl:'null' })
+        alert('Sign up successful');
+        console.log(user);
+        navigate('/login')
+      }
+      catch(error)
+      {
+        console.log(error);
+      }
+
+    }
     return (
       <Container maxW={'container.xl'} h={'100vh'} p={'16'}>
-        <form>
+        <form onSubmit={handleSigup}>
           <VStack
             alignItems={'stretch'}
             spacing={'8'}
