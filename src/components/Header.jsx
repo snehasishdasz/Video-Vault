@@ -3,7 +3,19 @@ import {Drawer,DrawerBody,DrawerHeader,DrawerOverlay,DrawerContent,DrawerCloseBu
 import { Link } from 'react-router-dom'
 import {HiMenuAlt2} from "react-icons/hi";
 
+
+import { useUserContext } from '../context/userContext';
+import { signOut } from 'firebase/auth';
+import { auth } from '../firebase/firebase';
+
 const Header = () => {
+    const { currentUser } = useUserContext();
+    const logOut = () =>{
+        signOut(auth).then(()=>{
+            alert('Signout');
+            window.location.reload();
+        });
+    }
     const { isOpen, onOpen, onClose } = useDisclosure()
   return (
     <>
@@ -46,12 +58,28 @@ const Header = () => {
                         </Button>
                     </VStack>
                     <HStack pos={"absolute"} bottom={"10"} left={"0"} w={"full"} justifyContent={"space-evenly"}>
-                        <Button onClick={onClose} colorScheme='red'>
-                            <Link to={"/login"}>Log In</Link>
-                        </Button>
-                        <Button onClick={onClose} colorScheme='red' variant={"outline"}>
-                            <Link to={"/signup"}>Sign Up</Link>
-                        </Button>
+                        <div className="bottom-part">
+                        <div className="username">
+                            <h2> Hello👋 {currentUser?.displayName} </h2>
+                        </div>
+                        {
+                            currentUser?.displayName ? 
+                            <div className='signout'> 
+                            <Button colorScheme='red' onClick={logOut}>
+                                <Link to={"/login"}> Sigout </Link>
+                            </Button>
+                            </div> 
+                            : 
+                            <div className="buttons">
+                            <Button onClick={onClose} colorScheme='red'>
+                                <Link to={"/login"}>Log In</Link>
+                            </Button>
+                            <Button onClick={onClose} colorScheme='red' variant={"outline"}>
+                                <Link to={"/signup"}>Sign Up</Link>
+                            </Button>
+                            </div>
+                        }
+                        </div>
                     </HStack>
                 </DrawerBody>
             </DrawerContent>

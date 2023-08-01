@@ -1,21 +1,47 @@
-import {
-    Button,
-    Container,
-    Heading,
-    Input,
-    Text,
-    VStack,
-  } from '@chakra-ui/react';
-  import React from 'react';
-  import { Link } from 'react-router-dom';
-  import { NavLink } from 'react-router-dom';
-  import "../App.css"
-  import man from "../assests/man.svg"
-  
+import { Button, Container, Heading, Input, Text, VStack } from '@chakra-ui/react';
+import React, { useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import "../App.css"
+import man from "../assests/man.svg"
+
+import { auth } from '../firebase/firebase';
+import { onAuthStateChanged, signInWithEmailAndPassword } from 'firebase/auth';
+import { useUserContext } from '../context/userContext';
+
   const Login = () => {
+
+    const navigate = useNavigate();
+    const { setCurrentUser } = useUserContext();
+    useEffect(() => {
+      const unsubscribe = onAuthStateChanged(auth, (user) => {
+        if (user) {
+          setCurrentUser(user);
+          navigate('/');
+        } else {
+          setCurrentUser(null);
+        }
+      });
+  
+      return () => unsubscribe();
+    }, [setCurrentUser]);
+
+    const handleSubmit = async (e) =>{
+      e.preventDefault();
+      const email = e.target[0].value;
+      const password = e.target[1].value;
+      try 
+      {
+        await signInWithEmailAndPassword(auth, email, password);
+      }
+      catch(error)
+      {
+        console.log(error);
+      }
+    }
     return (
       <Container maxW={'container.xl'} h={'100vh'} p={'16'}>
-        <form>
+        <form onSubmit={handleSubmit}>
           <VStack
             alignItems={'stretch'}
             spacing={'8'}
