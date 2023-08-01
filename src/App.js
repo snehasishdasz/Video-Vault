@@ -19,7 +19,7 @@ function App() {
         <Route path="/Upload" element={<Upload/>} />
         <Route path="/login" element={<Login/>} />
         <Route path="/signup" element={<SignUp/>} />
-        <Route path="/aboutme" element={<Profile/>} />
+        <Route path="/contributors" element={<Profile/>} />
       </Routes>
       <Footer/>
     </Router>

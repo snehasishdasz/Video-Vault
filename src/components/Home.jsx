@@ -1,6 +1,6 @@
 import { Box, Container, Heading, Image, Stack, Text } from '@chakra-ui/react'
-import React from 'react'
-import userImage from "../user-image.jpg"
+import React, { useState } from 'react'
+import man from "../assests/man.svg"
 import { NavLink } from 'react-router-dom';
 import { Carousel } from "react-responsive-carousel";
 import "../App.css"
@@ -103,17 +103,17 @@ const Home = () => {
                 </Stack>
             </Container>
 
-            <NavLink to="/aboutme">
+            <NavLink to="/contributors">
 
-      <div className="floating-icon" >
-        <img src={userImage} alt="User" className="user-image" />
-      </div>
-      </NavLink>
+                <div className="floating-icon"  >
+                    <img src={man} alt="User" className="user-image" />
+                    <div className="hover-message">Contributors</div>
+                </div>
+                
+                
+            </NavLink>
 
         </Box>
     )
 };
-
-
-
-export default Home 
+export default Home;

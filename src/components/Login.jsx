@@ -10,7 +10,7 @@ import {
   import { Link } from 'react-router-dom';
   import { NavLink } from 'react-router-dom';
   import "../App.css"
-  import userImage from "../user-image.jpg"
+  import man from "../assests/man.svg"
   
   const Login = () => {
     return (
@@ -57,7 +57,7 @@ import {
         <NavLink to="/aboutme">
 
       <div className="floating-icon" >
-        <img src={userImage} alt="User" className="user-image" />
+        <img src={man} alt="User" className="user-image" />
       </div>
       </NavLink>
       </Container>

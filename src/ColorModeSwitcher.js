@@ -9,6 +9,7 @@ export const ColorModeSwitcher = props => {
 
   return (
     <IconButton
+      backgroundColor={"#FF4F4B"}
       variant="ghost"
       color="current"
       pos={"fixed"}
