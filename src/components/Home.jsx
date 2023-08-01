@@ -58,27 +58,27 @@ const Home = () => {
                 showArrows={false}>
 
                 <Box h={"100vh"}>
-                    <img style={{ borderRadius: "120px", padding: "80px" }} src={img1} />
+                    <img src={img1} />
                     <Heading bgColor={"white"} color={"black"} pos={"absolute"} {...headingOptions}>Nature</Heading>
                 </Box>
                 <Box w={'full'} h={"100vh"}>
-                    <img style={{ borderRadius: "120px", padding: "80px" }} src={img2} />
+                    <img src={img2} />
                     <Heading bgColor={"white"} color={"black"} {...headingOptions}>Animal</Heading>
                 </Box>
                 <Box w={'full'} h={"100vh"}>
-                    <img style={{ borderRadius: "120px", padding: "80px" }} src={img3} />
+                    <img src={img3} />
                     <Heading bgColor={"white"} color={"black"} {...headingOptions}>Games</Heading>
                 </Box>
                 <Box w={'full'} h={"100vh"}>
-                    <img style={{ borderRadius: "120px", padding: "80px" }} src={img4} />
+                    <img src={img4} />
                     <Heading bgColor={"white"} color={"black"} {...headingOptions}>Racing</Heading>
                 </Box>
                 <Box w={'full'} h={"100vh"}>
-                    <img style={{ borderRadius: "120px", padding: "80px" }} src={img5} />
+                    <img src={img5} />
                     <Heading bgColor={"white"} color={"black"} {...headingOptions}>Sports</Heading>
                 </Box>
                 <Box w={'full'} h={"100vh"}>
-                    <img style={{ borderRadius: "120px", padding: "80px" }} src={img6} />
+                    <img src={img6} />
                     <Heading bgColor={"white"} color={"black"} {...headingOptions}>Gaming</Heading>
                 </Box>
             </Carousel>
