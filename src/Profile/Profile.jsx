@@ -21,7 +21,7 @@ const Profile = () => {
         <div className="detail-1">
           <h2>
             Snehasish Das<br />
-            <span>Web Developer</span>
+            <span>REACT Developer</span>
           </h2>
           <ul className="sci">
             <li>
@@ -64,31 +64,31 @@ const Profile = () => {
       <div className="content">
         <div className="detail">
           <h2>
-            Snehasish Das<br />
-            <span>Web Developer</span>
+            Abhishek Das<br />
+            <span>Fullstack Developer</span>
           </h2>
           <ul className="sci2">
             <li>
-              <a href="https://github.com/snehasishdasz">
+              <a href="https://github.com/abhishekdasz">
               <FaGithub/>
               {/* <BsGithub /> */}
               </a>
             </li>
             <li>
-              <a href="https://twitter.com/Snehasishdasz">
+              <a href="https://twitter.com/abhishekdasz">
               {/* <FontAwesomeIcon icon={faLinkedIn} /> */}
               <FaTwitter/>
               {/* <FaTwitter /> */}
               </a>
             </li>
             <li>
-              <a href="https://www.linkedin.com/in/snehasish-das/">
+              <a href="https://www.linkedin.com/in/abhishekdasz">
               {/* <FontAwesomeIcon icon="fa-brands fa-twitter" /> */}
               <FaLinkedin/>
               </a>
             </li>
             <li>
-              <a href="https://www.instagram.com/snehasishdasz/">
+              <a href="https://instagram.com/abhishekdasz">
               {/* <FontAwesomeIcon icon="fa-brands fa-twitter" /> */}
               <AiFillInstagram/>
               {/* <FaSquareInstagram /> */}
