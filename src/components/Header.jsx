@@ -46,7 +46,7 @@ const Header = () => {
                         </Button>
 
                         <Button onClick={onClose} w={"full"} color='#3F72AF'>
-                            <Link to={"/videos"}>Your Videos</Link>
+                            <Link to={"/videos"}> Videos</Link>
                         </Button>
 
                         <Button onClick={onClose} w={"full"} color='#3F72AF'>
