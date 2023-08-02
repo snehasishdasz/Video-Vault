@@ -47,7 +47,7 @@ const Videos = () => {
             colorScheme={'purple'}
             onClick={() => setVideoSrc(item)}
           >
-            Lecture {index + 1}
+            Sample Video {index + 1}
           </Button>
         ))}
       </VStack>
