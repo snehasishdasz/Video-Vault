@@ -22,7 +22,7 @@ const Footer = () => {
             borderRight={["none","1px solid white"]}
             >
                 <Heading  textAlign={"center"}><span style={{color:"#FF2E63",fontSize:"45px"}}>V</span>ideo<span style={{color:"#FF2E63",fontSize:"45px"}}>V</span>ault</Heading>
-                <Text color={"white"} pt={"4"}>Created with ❤️ by Abhishek & Snehasish</Text>
+                
             </VStack>
             <VStack w={'full'}>
                 <Heading size={"md"} textTransform={"uppercase"} pb={"5px"}>Social Media</Heading>

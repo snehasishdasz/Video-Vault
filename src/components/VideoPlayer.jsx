@@ -1,9 +1,10 @@
 import React from 'react';
+import "../App.css"
 
 const VideoPlayer = ({ url }) => {
   return (
-    <div style={{ maxWidth: '100%', maxHeight: '100%', overflow: 'hidden' }}>
-      <video width="100%" height="auto" controls>
+    <div className="video-container">
+      <video className="video-player" controls>
         <source src={url} type="video/mp4" />
         Your browser does not support the video tag.
       </video>

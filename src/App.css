@@ -65,3 +65,35 @@
   display: flex;
   gap: 1rem;
 }
+
+
+
+
+
+
+/* VideoPlayer.css */
+.video-container {
+  max-width: 800px;
+  margin: 0 auto;
+  border: 3px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.video-player {
+  width: 100%;
+  height: auto;
+}
+
+.header {
+  background-color: #1A202C;
+  color:  white;
+  padding: 20px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+}

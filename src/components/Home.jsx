@@ -4,6 +4,7 @@ import man from "../assests/man.svg"
 import { NavLink } from 'react-router-dom';
 import { Carousel } from "react-responsive-carousel";
 import "../App.css"
+import Footer from './Footer';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import img1 from "../assests/N2.jpg"
 import img2 from "../assests/A4.jpg"
@@ -91,8 +92,9 @@ const Home = () => {
                 
                 
             </NavLink>
-
+            <Footer/>
         </Box>
+        
     )
 };
 export default Home;

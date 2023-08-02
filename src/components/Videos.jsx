@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { db } from "../firebase/firebase";
 import { doc, getDoc } from "firebase/firestore";
 import { useUserContext } from '../context/userContext';
+import "../App.css"
 
 const Videos = () => {
   const { currentUser } = useUserContext();
@@ -41,14 +42,23 @@ const Videos = () => {
 
   return (
     <div>
+    <header className="header"><span style={{color:"#FF2E63",fontSize:"35px"}}>U</span>ploaded<span style={{color:"#FF2E63",fontSize:"35px"}}> V</span>ideos</header>
       {videos.map((videoUrl, index) => (
-        <video key={index} controls>
+        <div className="video-container">
+        
+        <video className="video-player"  key={index} controls>
           <source src={videoUrl} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
+        </div>
+
       ))}
     </div>
   );
 };
 
 export default Videos;
+{/* <video  key={index} controls>
+          <source src={videoUrl} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video> */}

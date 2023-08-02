@@ -7,6 +7,7 @@ import Videos from "./components/Videos";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 import Upload from "./components/Upload";
+import SampleVideos from "./components/SampleVideos";
 import Profile from "./Profile/Profile"
 
 import UserProvider from "./context/userContext";
@@ -19,12 +20,13 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/videos" element={<Videos/>} />
+        <Route path="/freevideos" element={<SampleVideos/>} />
         <Route path="/Upload" element={<Upload/>} />
         <Route path="/login" element={<Login/>} />
         <Route path="/signup" element={<SignUp/>} />
         <Route path="/contributors" element={<Profile/>} />
       </Routes>
-      <Footer/>
+      
     </Router>
   </UserProvider>
   );

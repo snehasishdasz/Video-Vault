@@ -47,16 +47,16 @@ const Header = () => {
                         </Button>
                      </Link>
 
-                        <Button onClick={onClose} w={"full"} color='#3F72AF'>
+                        <Button onClick={onClose} w={"full"} color='#3F72AF' size='lg' height='48px' width='250px'>
                             <Link to={"/videos"}> Videos</Link>
                         </Button>
                     
-                        <Button onClick={onClose} w={"full"} color='#3F72AF' size='lg' height='48px' width='250px'>
-                            <Link to={"/videos"}>Videos</Link>
-                        </Button>
+                        {/* <Button onClick={onClose} w={"full"} color='#3F72AF' size='lg' height='48px' width='250px'>
+                            <Link to={"/freevideos"}>Free Videos</Link>
+                        </Button> */}
 
                         <Button onClick={onClose} w={"full"} color='#3F72AF' size='lg' height='48px' width='250px'>
-                            <Link to={"/videos?category=free"}>Free Videos</Link>
+                            <Link to={"/freevideos?category=free"}>Free Videos</Link>
                         </Button>
 
                         <Button onClick={onClose} w={"full"} color='#3F72AF' size='lg' height='48px' width='250px'>
@@ -66,7 +66,7 @@ const Header = () => {
                     <HStack pos={"absolute"} bottom={"10"} left={"0"} w={"full"} justifyContent={"space-evenly"}>
                         <div className="bottom-part">
                         <div className="username">
-                            <Text> Hello👋<span style={{fontWeight:"bold",color:"#0B2D51",fontSize:"18px"}}>   {currentUser?.displayName}</span></Text>
+                            <Text> Hello👋 <span style={{fontWeight:"bold",fontSize:"18px"}}>{currentUser?.displayName}</span></Text>
                         </div>
                         {
                             currentUser?.displayName ? 
