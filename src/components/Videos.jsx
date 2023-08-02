@@ -3,7 +3,7 @@ import { db } from "../firebase/firebase";
 import { doc, getDoc } from "firebase/firestore";
 import { useUserContext } from '../context/userContext';
 
-const VideoGallery = () => {
+const Videos = () => {
   const { currentUser } = useUserContext();
   const [videos, setVideos] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -51,4 +51,4 @@ const VideoGallery = () => {
   );
 };
 
-export default VideoGallery;
+export default Videos;
