@@ -97,7 +97,28 @@ const Upload = () => {
 
         <form onSubmit={handleUpload}>
           <HStack>
-            <Input onChange={handleFileChange} required type={'file'} css={{'&::file-selector-button': {border: 'none',width: 'calc(100% + 36px)',height: '100%',marginLeft: '-18px',color: 'purple',backgroundColor: 'white',cursor: 'pointer',},}}/>
+            <Input onChange={handleFileChange} required
+      type="file"
+      bg="white"
+      border="1px solid gray"
+      borderRadius="md"
+      color="gray.800"
+      py={1}
+      px={4}
+      _hover={{
+        borderColor: 'purple.500',
+      }}
+      _focus={{
+        borderColor: 'purple.500',
+        boxShadow: '0 0 0 2px rgba(128, 90, 213, 0.3)',
+      }}
+      _invalid={{
+        borderColor: 'red.500',
+      }}
+      _disabled={{
+        opacity: '0.6',
+        cursor: 'not-allowed',
+      }}/>
             <Button colorScheme={'red'} type={'submit'}> Upload </Button>
           </HStack>
         </form>
