@@ -2,6 +2,7 @@ import { Button, Heading, Stack, Text, VStack } from '@chakra-ui/react';
 import React, { useState } from 'react';
 
 const Videos = () => {
+    
   const videosArr = [
     'https://player.vimeo.com/progressive_redirect/playback/689949818/rendition/540p?loc=external&oauth2_token_id=1027659655&signature=cf602155bf49e4e74db6f2ec9d4ecf067fbab44c4295a8950d58ecdb88910882',
     'https://player.vimeo.com/progressive_redirect/playback/697718184/rendition/360p?loc=external&oauth2_token_id=1027659655&signature=26d69c3df603d083fedd663acaab4d35a33444d11033a626864cf1e578e136cf',
@@ -15,8 +16,9 @@ const Videos = () => {
   const [videoSrc, setVideoSrc] = useState(videosArr[0]);
 
   return (
-    <Stack direction={['column', 'row']} h={'100vh'}>
-      <VStack w={'full'}>
+    <Stack direction={['column', 'row']} h={'100vh'} spacing={0}>
+      {/* Left side: Video player */}
+      {/* <VStack w={['full', '70%']} bg="black" color="white">
         <video
           controls
           controlsList="nodownload"
@@ -26,25 +28,43 @@ const Videos = () => {
           }}
         ></video>
 
-        <VStack alignItems={'flex-start'} p={'8'} w={'full'} overflowY={'auto'}>
-          <Heading>Sample Video 1</Heading>
-          <Text>
+        <VStack alignItems={'flex-start'} p={6} w={'full'} h={'200px'} overflowY={'auto'}>
+          <Heading fontSize="2xl" mb={2}>Sample Video 1</Heading>
+          <Text fontSize="md">
             This is a sample video for testing and demo. This is called
             description.
           </Text>
         </VStack>
+      </VStack> */}
+
+      <VStack w={['full', '70%']} bg="black" color="white"  boxShadow="lg" p={4}>
+        <video
+          controls
+          controlsList="nodownload"
+          src={videoSrc}
+          style={{
+            width: '100%',
+            borderRadius: '40px',
+          }}
+        ></video>
+
+        <VStack alignItems="flex-start" mt={4} w="full" h="200px" overflowY="auto">
+          <Heading fontSize="2xl" mb={2}>Sample Video 1</Heading>
+          <Text fontSize="md">
+            This is a sample video for testing and demo. This is called description.
+          </Text>
+        </VStack>
       </VStack>
-      <VStack
-        w={['full', 'xl']}
-        alignItems={'stretch'}
-        p="8"
-        spacing={'8'}
-        overflowY={'auto'}
-      >
+
+      
+
+      {/* Right side: Video list */}
+      <VStack w={['full', '30%']} alignItems={'stretch'} p={4} spacing={4} pt={["3","190px"]}>
         {videosArr.map((item, index) => (
           <Button
-            variant={'ghost'}
-            colorScheme={'purple'}
+            key={index}
+            variant={videoSrc === item ? 'solid' : 'outline'}
+            colorScheme={'red'}
             onClick={() => setVideoSrc(item)}
           >
             Sample Video {index + 1}
