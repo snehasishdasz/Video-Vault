@@ -14,6 +14,26 @@ import img5 from "../assests/S4.jpg"
 import img6 from "../assests/G3.jpg"
 import img7 from "../assests/V5.gif"
 
+
+const AnimatedHighlightText = ({ children }) => (
+    <Box as="span" position="relative">
+      {children}
+      <Box
+        as="span"
+        position="absolute"
+        left="0"
+        bottom="-4px"
+        w="100%"
+        h="2px"
+        bgColor="#FF2E63"
+        opacity="0.7"
+        borderRadius="4px"
+        zIndex="1"
+        animation="highlight 2s infinite"
+      />
+    </Box>
+  );
+
 const headingOptions = {
     // pos: "absolute",
     // left: "50%",
@@ -37,230 +57,6 @@ const Home = () => {
 
     return (
         <Box style={{ textAlign: "center" }} w={'400'}>
-            {/* <MyCarousel/> */}
-            {/* <Carousel
-                autoPlay
-                infiniteLoop
-                interval={3000}
-                showStatus={false}
-                showThumbs={false}
-                showArrows={false}>
-
-                <Box h={"100vh"}>
-                    <img src={img1} />
-                    <Heading bgColor={"white"} color={"black"} pos={"absolute"} {...headingOptions}>Nature</Heading>
-                </Box>
-                <Box w={'full'} h={"100vh"}>
-                    <img src={img2} />
-                    <Heading bgColor={"white"} color={"black"} {...headingOptions}>Animal</Heading>
-                </Box>
-                <Box w={'full'} h={"100vh"}>
-                    <img src={img3} />
-                    <Heading bgColor={"white"} color={"black"} {...headingOptions}>Games</Heading>
-                </Box>
-                <Box w={'full'} h={"100vh"}>
-                    <img src={img4} />
-                    <Heading bgColor={"white"} color={"black"} {...headingOptions}>Racing</Heading>
-                </Box>
-                <Box w={'full'} h={"100vh"}>
-                    <img src={img5} />
-                    <Heading bgColor={"white"} color={"black"} {...headingOptions}>Sports</Heading>
-                </Box>
-                <Box w={'full'} h={"100vh"}>
-                    <img src={img6} />
-                    <Heading bgColor={"white"} color={"black"} {...headingOptions}>Gaming</Heading>
-                </Box>
-            </Carousel> */}
-
-            {/* PART2 */}
-            {/* <Carousel
-      autoPlay
-      infiniteLoop
-      interval={3000}
-      showStatus={false}
-      showThumbs={false}
-      showArrows={false}
-    >
-      <Box h="100vh" position="relative">
-        <img src={img1} alt="Nature" width="100%" height="100%" objectFit="cover" />
-        <Heading bgColor="white" color="black" {...headingOptions}>
-          Nature
-        </Heading>
-      </Box>
-      <Box h="100vh" position="relative">
-        <img src={img2} alt="Animal" width="100%" height="100%" objectFit="cover" />
-        <Heading bgColor="white" color="black" {...headingOptions}>
-          Animal
-        </Heading>
-      </Box>
-      <Box h="100vh" position="relative">
-        <img src={img3} alt="Games" width="100%" height="100%" objectFit="cover" />
-        <Heading bgColor="white" color="black" {...headingOptions}>
-          Games
-        </Heading>
-      </Box>
-      <Box h="100vh" position="relative">
-        <img src={img4} alt="Racing" width="100%" height="100%" objectFit="cover" />
-        <Heading bgColor="white" color="black" {...headingOptions}>
-          Racing
-        </Heading>
-      </Box>
-      <Box h="100vh" position="relative">
-        <img src={img5} alt="Sports" width="100%" height="100%" objectFit="cover" />
-        <Heading bgColor="white" color="black" {...headingOptions}>
-          Sports
-        </Heading>
-      </Box>
-      <Box h="100vh" position="relative">
-        <img src={img6} alt="Gaming" width="100%" height="100%" objectFit="cover" />
-        <Heading bgColor="white" color="black" {...headingOptions}>
-          Gaming
-        </Heading>
-      </Box>
-    </Carousel> */}
-
-            {/* 
-    PART3 */}
-            {/* <Carousel
-                autoPlay
-                infiniteLoop
-                interval={3000}
-                showStatus={false}
-                showThumbs={false}
-                showArrows={false}
-            >
-                <Box h={{ base: '60vh', md: '100vh' }} position="relative">
-                    <img
-                        src={img1}
-                        alt="Nature"
-                        width="100%"
-                        height="100%"
-                        objectFit="cover"
-                    />
-                    <Heading
-                        bgColor="white"
-                        color="black"
-                        {...headingOptions}
-                        position="absolute"
-                        bottom="0"
-                        left="0"
-                        w="100%"
-                        textAlign="center"
-                    >
-                        Nature
-                    </Heading>
-                </Box>
-
-                <Box h={{ base: '60vh', md: '100vh' }} position="relative">
-                    <img
-                        src={img2}
-                        alt="Nature"
-                        width="100%"
-                        height="100%"
-                        objectFit="cover"
-                    />
-                    <Heading
-                        bgColor="white"
-                        color="black"
-                        {...headingOptions}
-                        position="absolute"
-                        bottom="0"
-                        left="0"
-                        w="100%"
-                        textAlign="center"
-                    >
-                        Animal
-                    </Heading>
-                </Box>
-
-                <Box h={{ base: '60vh', md: '100vh' }} position="relative">
-                    <img
-                        src={img3}
-                        alt="Nature"
-                        width="100%"
-                        height="100%"
-                        objectFit="cover"
-                    />
-                    <Heading
-                        bgColor="white"
-                        color="black"
-                        {...headingOptions}
-                        position="absolute"
-                        bottom="0"
-                        left="0"
-                        w="100%"
-                        textAlign="center"
-                    >
-                        Games
-                    </Heading>
-                </Box>
-
-                <Box h={{ base: '60vh', md: '100vh' }} position="relative">
-                    <img
-                        src={img4}
-                        alt="Nature"
-                        width="100%"
-                        height="100%"
-                        objectFit="cover"
-                    />
-                    <Heading
-                        bgColor="white"
-                        color="black"
-                        {...headingOptions}
-                        position="absolute"
-                        bottom="0"
-                        left="0"
-                        w="100%"
-                        textAlign="center"
-                    >
-                        Racing
-                    </Heading>
-                </Box>
-
-                <Box h={{ base: '60vh', md: '100vh' }} position="relative">
-                    <img
-                        src={img5}
-                        alt="Nature"
-                        width="100%"
-                        height="100%"
-                        objectFit="cover"
-                    />
-                    <Heading
-                        bgColor="white"
-                        color="black"
-                        {...headingOptions}
-                        position="absolute"
-                        bottom="0"
-                        left="0"
-                        w="100%"
-                        textAlign="center"
-                    >
-                        Sports
-                    </Heading>
-                </Box>
-
-                <Box h={{ base: '60vh', md: '100vh' }} position="relative">
-                    <img
-                        src={img6}
-                        alt="Nature"
-                        width="100%"
-                        height="100%"
-                        objectFit="cover"
-                    />
-                    <Heading
-                        bgColor="white"
-                        color="black"
-                        {...headingOptions}
-                        position="absolute"
-                        bottom="0"
-                        left="0"
-                        w="100%"
-                        textAlign="center"
-                    >
-                        Gaming
-                    </Heading>
-                </Box>
-            </Carousel> */}
 
             <Carousel
                 autoPlay
@@ -273,7 +69,6 @@ const Home = () => {
                 <Box h={{ base: '60vh', md: '100vh' }}
         position="relative"
         overflow="hidden"
-        borderRadius="8px"
         boxShadow="md">
                     <img
                         src={img1}
@@ -296,7 +91,6 @@ const Home = () => {
                 <Box h={{ base: '60vh', md: '100vh' }}
         position="relative"
         overflow="hidden"
-        borderRadius="8px"
         boxShadow="md">
                     <img
                         src={img2}
@@ -319,7 +113,6 @@ const Home = () => {
                 <Box h={{ base: '60vh', md: '100vh' }}
         position="relative"
         overflow="hidden"
-        borderRadius="8px"
         boxShadow="md">
                     <img
                         src={img3}
@@ -342,7 +135,6 @@ const Home = () => {
                 <Box h={{ base: '60vh', md: '100vh' }}
         position="relative"
         overflow="hidden"
-        borderRadius="8px"
         boxShadow="md">
                     <img
                         src={img4}
@@ -365,7 +157,6 @@ const Home = () => {
                 <Box h={{ base: '60vh', md: '100vh' }}
         position="relative"
         overflow="hidden"
-        borderRadius="8px"
         boxShadow="md">
                     <img
                         src={img5}
@@ -388,7 +179,6 @@ const Home = () => {
                 <Box h={{ base: '60vh', md: '100vh' }}
         position="relative"
         overflow="hidden"
-        borderRadius="8px"
         boxShadow="md">
                     <img
                         src={img6}
@@ -411,29 +201,6 @@ const Home = () => {
                 {/* Repeat the same structure for other carousel slides */}
             </Carousel>
 
-
-
-
-            {/* <Container maxWidth={"container.xl"} minH={"70vh"} p={"16"} >
-                <Heading textTransform={"uppercase"} py={"2"} w={"fit-content"} borderBottom={"2px solid"} m={"auto"} ><span style={{ color: "#FF2E63", fontSize: "50px" }}>A</span>bout Us</Heading>
-
-                <Stack
-                    h={"full"}
-                    p={"4"}
-                    alignItems={"center"}
-                    direction={["column", "row"]}
-                >
-
-                    <Image src={img7} h={["40", "300"]} />
-                    <Text letterSpacing={"widest"} lineHeight={"190%"} p={["4", "16"]} fontFamily={"Montserrat"} textAlign={"center"} fontWeight={"700"}>
-
-                        Welcome to our <span style={{ color: "#FF2E63", fontSize: "30px" }}>V</span>IDEO <span style={{ color: "#FF2E63", fontSize: "30px" }}>S</span>treaming application, your gateway to a diverse world of entertainment! With a user-friendly interface and advanced search, you'll find the perfect content tailored to your preferences. Enjoy high-definition nature documentaries, where you can explore exotic landscapes and wildlife in stunning detail. Delight in heartwarming animal moments, from adorable pets to majestic creatures, captivating you with their charm and intelligence.
-
-                        For sports enthusiasts, we offer real-time events, matches, and highlights from popular leagues and niche competitions. Stay up to date with the latest gaming trends, walkthroughs, reviews, and exciting live streams from your favorite gamers. Experience the adrenaline rush with our collection of jaw-dropping racing videos, featuring epic races and thrilling stunts across various terrains.
-
-                    </Text>
-                </Stack>
-            </Container> */}
 
             <Container maxWidth="container.xl" minH="70vh" p={8}>
                 <Heading
@@ -462,34 +229,28 @@ const Home = () => {
                         objectFit="cover"
                     />
 
-                    <Text
-                        lineHeight="1.8"
-                        p={['4', '16']}
-                        fontFamily="Montserrat"
-                        textAlign="left"
-                        fontWeight="500"
-                        fontSize={{ base: '16px', md: '18px', lg: '20px' }}
+<Text
+        lineHeight="1.8"
+        p={['4', '16']}
+        fontFamily="Montserrat"
+        textAlign="left"
+        fontWeight="500"
+        fontSize={{ base: '16px', md: '18px', lg: '18px' }}
+      >
+        Welcome to our{' '}
+        <span style={{ color: '#FF2E63', fontSize: '30px' }}>V</span>IDEO{' '}
+        <span style={{ color: '#FF2E63', fontSize: '30px' }}>S</span>treaming application, where entertainment meets convenience! Our platform is designed to provide you with a seamless video streaming experience like never before. Whether you're a movie enthusiast, a sports fanatic, or simply looking for a dose of entertainment, our website has got you covered.
+        <br />
+        <br />
+        With our user-friendly interface, creating an account and logging in is a breeze. Once you've signed up, you'll have access to a vast library of sample videos, ranging from captivating documentaries to thrilling sports highlights and more. You can explore a diverse collection of content tailored to your preferences and interests.
+        <br />
+        <br />
+        But that's not all! We understand that everyone has a story to tell, and that's why we allow our users to <AnimatedHighlightText>upload their videos</AnimatedHighlightText>. You can now share your favorite memories, talents, and experiences with the world, and store them securely in your own personal account. Enjoy the freedom of <AnimatedHighlightText>watching your own videos</AnimatedHighlightText><AnimatedHighlightText>whenever you like, on any device, at any time</AnimatedHighlightText>
+        <br />
+        <br />
+        At our video streaming application, we strive to provide you with a seamless and immersive viewing experience. So sit back, relax, and let the entertainment begin! Join us on this exciting journey of discovery and connection through the power of videos.
+      </Text>
 
-                    >
-                        Welcome to our{' '}
-                        <span style={{ color: '#FF2E63', fontSize: '30px' }}>V</span>IDEO{' '}
-                        <span style={{ color: '#FF2E63', fontSize: '30px' }}>S</span>treaming
-                        application, your gateway to a diverse world of entertainment! With a
-                        user-friendly interface and advanced search, you'll find the perfect
-                        content tailored to your preferences. Enjoy high-definition nature
-                        documentaries, where you can explore exotic landscapes and wildlife
-                        in stunning detail. Delight in heartwarming animal moments, from
-                        adorable pets to majestic creatures, captivating you with their charm
-                        and intelligence.
-                        <br />
-                        <br />
-                        For sports enthusiasts, we offer real-time events, matches, and
-                        highlights from popular leagues and niche competitions. Stay up to
-                        date with the latest gaming trends, walkthroughs, reviews, and
-                        exciting live streams from your favorite gamers. Experience the
-                        adrenaline rush with our collection of jaw-dropping racing videos,
-                        featuring epic races and thrilling stunts across various terrains.
-                    </Text>
                 </Stack>
             </Container>
 
