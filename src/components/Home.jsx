@@ -65,6 +65,7 @@ const Home = () => {
                 showStatus={false}
                 showThumbs={false}
                 showArrows={false}
+                
             >
                 <Box h={{ base: '60vh', md: '100vh' }}
         position="relative"
