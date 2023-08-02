@@ -45,14 +45,23 @@ const Header = () => {
                         <Button onClick={onClose}  color='#3F72AF' size='lg' height='48px' width='250px'>
                             Home
                         </Button>
+<<<<<<< HEAD
                     </Link>
                         <Button onClick={onClose} w={"full"} color='#3F72AF' size='lg' height='48px' width='250px'>
                             <Link to={"/videos"}>Videos</Link>
                         </Button>
 
                         <Button onClick={onClose} w={"full"} color='#3F72AF' size='lg' height='48px' width='250px'>
-                            <Link to={"/videos?category=free"}>Free Videos</Link>
+=======
+
+                        <Button onClick={onClose} w={"full"} color='#3F72AF'>
+                            <Link to={"/videos"}>Your Videos</Link>
                         </Button>
+
+                        {/* <Button onClick={onClose} w={"full"} color='#3F72AF'>
+>>>>>>> 60329a512e0523cae8b3f03b561625e4b934d816
+                            <Link to={"/videos?category=free"}>Free Videos</Link>
+                        </Button> */}
 
                         <Button onClick={onClose} w={"full"} color='#3F72AF' size='lg' height='48px' width='250px'>
                             <Link to={"/upload"}>Upload Video</Link>
