@@ -1,36 +1,36 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {Drawer,DrawerBody,DrawerHeader,DrawerOverlay,DrawerContent,DrawerCloseButton, Button, useDisclosure, color, VStack, HStack,Text} from "@chakra-ui/react"
 import { Link } from 'react-router-dom'
 import {HiMenuAlt2} from "react-icons/hi";
 
 
 import { useUserContext } from '../context/userContext';
-import { signOut } from 'firebase/auth';
+import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { auth } from '../firebase/firebase';
 
 const Header = () => {
-    const { currentUser } = useUserContext();
+    const { currentUser, setCurrentUser } = useUserContext();
     const logOut = () =>{
         signOut(auth).then(()=>{
             alert('Signout');
             window.location.reload();
         });
     }
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
+          if (user) {
+            setCurrentUser(user);
+          } else {
+            setCurrentUser(null);
+          }
+        });
+    
+        return () => unsubscribe();
+      }, [setCurrentUser]);
     const { isOpen, onOpen, onClose } = useDisclosure()
   return (
     <>
-        <Button 
-        zIndex={"overlay"}
-        pos={"fixed"} 
-        top={"4"} 
-        left={"4"} 
-        colorScheme='red' 
-        p={"0"} 
-        w={"10"} 
-        h={"10"} 
-        borderRadius={"full"}
-        onClick={onOpen}
-        >
+        <Button zIndex={"overlay"} pos={"fixed"} top={"4"} left={"4"} colorScheme='red' p={"0"} w={"10"} h={"10"} borderRadius={"full"}onClick={onOpen}>
             <HiMenuAlt2 size={"20"}  />
         </Button>
 
@@ -45,7 +45,12 @@ const Header = () => {
                         <Button onClick={onClose}  color='#3F72AF' size='lg' height='48px' width='250px'>
                             Home 
                         </Button>
-                    </Link>
+                     </Link>
+
+                        <Button onClick={onClose} w={"full"} color='#3F72AF'>
+                            <Link to={"/videos"}> Videos</Link>
+                        </Button>
+                    
                         <Button onClick={onClose} w={"full"} color='#3F72AF' size='lg' height='48px' width='250px'>
                             <Link to={"/videos"}>Videos</Link>
                         </Button>

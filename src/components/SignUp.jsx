@@ -22,7 +22,7 @@ import { doc, setDoc } from 'firebase/firestore';
       {
         const {user} = await createUserWithEmailAndPassword(auth, email, password);
         await updateProfile(user, {displayName:name});
-        await setDoc(doc(db, 'users', user.uid),{ uid: user.uid, name, email, videourl:'null' })
+        await setDoc(doc(db, 'users', user.uid),{ uid: user.uid, name, email, videourl:[] })
         alert('Sign up successful');
         console.log(user);
         navigate('/login')
