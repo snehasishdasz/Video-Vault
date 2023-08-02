@@ -43,7 +43,7 @@ const Header = () => {
                     <VStack>
                     <Link to={"/"}>
                         <Button onClick={onClose}  color='#3F72AF' size='lg' height='48px' width='250px'>
-                            Home
+                            Home 
                         </Button>
                     </Link>
                         <Button onClick={onClose} w={"full"} color='#3F72AF' size='lg' height='48px' width='250px'>
